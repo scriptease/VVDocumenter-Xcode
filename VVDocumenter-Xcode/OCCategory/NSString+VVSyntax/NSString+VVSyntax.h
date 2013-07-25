@@ -19,4 +19,14 @@
 -(BOOL) isStruct;
 -(BOOL) isUnion;
 -(BOOL) isComplieKeyword;
+
+/**
+ *  Creates a fillup identation of max 8 spaces instead of tabs
+ *
+ *  @param     indentUpTo8        the length of the string before the identation
+ *
+ *  @return    a string containing spaces
+ */
++ (NSString*)stringToFillIndent:(NSUInteger)indentUpTo8;
+
 @end

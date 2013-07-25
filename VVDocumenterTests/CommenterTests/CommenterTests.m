@@ -8,6 +8,7 @@
 
 #import "CommenterTests.h"
 #import "VVCommenter.h"
+#import "NSString+VVSyntax.h"
 
 @interface CommenterTests()
 @end
@@ -93,6 +94,13 @@
     STAssertEqualObjects(arg0.name, [(VVArgument *)baseCommenter.arguments[0] name], @"%@ should be name %@", [(VVArgument *)baseCommenter.arguments[0] name], arg0.name);
     STAssertEqualObjects(arg1.name, [(VVArgument *)baseCommenter.arguments[1] name], @"%@ should be type %@", [(VVArgument *)baseCommenter.arguments[1] name], arg1.name);
     
+}
+
+-(void) testSpaceIndentation
+{
+    STAssertEqualObjects(@"        ", [NSString stringToFillIndent:0], @"Should return a 8 spacesb");
+    STAssertEqualObjects(@"    ", [NSString stringToFillIndent:4], @"Should return 4 spaces");
+    STAssertEqualObjects(@" ", [NSString stringToFillIndent:8], @"Should return a minumum of 1 space");
 }
 
 @end

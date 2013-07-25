@@ -56,4 +56,11 @@
     return ![self isProperty] && [self matchesPatternRegexPattern:@"^\\s*\\@"];
 }
 
++ (NSString*)stringToFillIndent:(NSUInteger)indentUpTo8
+{
+    NSUInteger index = MAX(1, MIN(8-indentUpTo8, 8));
+    NSString* indent = [@"        " substringToIndex:index];
+    return indent;
+}
+
 @end
